@@ -1,0 +1,112 @@
+
+<!DOCTYPE html >
+<html>
+<head>
+    <title>客户关系管理子系统</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+	<!-- easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/metro/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+    <!--<link rel="stylesheet" type="text/css" href="easyui/demo.css"> -->
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript">
+    var index=0;
+    $(function(){
+    	$('#tt1').tree({
+			url:'/内容页/数据仓库/首页菜单.json',
+			animate:true,dnd:true,
+			onDblClick:function(node){
+				//双击编辑节点
+				// $('#tt1').tree('beginEdit',node.target)			},
+			onClick: function(node){
+				var nodeText=node.text;
+				//判断是否是*开头  *开头的直接返回
+				var nodetype=nodeText.search(/^\*/);
+				if(nodetype==-1){
+					return ;
+				}
+				//去掉星号
+				nodeText=nodeText.replace('*','');
+				//去掉斜杠
+				nodeText=nodeText.replace('/','');
+				
+				if($('#tt').tabs('exists',nodeText)){
+					$('#tt').tabs('select',nodeText)
+					return;
+				}
+				
+				$('#tt').tabs('add',{
+					title:nodeText,
+					fit:true,
+					content:'<iframe style="height:100%;width:100%" align="center" id="winframe'+(++index)+'" onload="setIframe('+index+')" frameborder="no" border="0"  src="/内容页/'+nodeText+'.html"></iframe>' ,
+					closable:true,
+				});
+			}
+		});
+		//打开所有节点///////////////
+		var roots=$('#tt1').tree('getRoots');
+		for(var i=0;i<roots.length;i++){
+    		$('#tt1').tree('expandAll',roots[i].target)
+		}
+    })
+    function setIframe(index) {
+		//修改iframe的高度
+		//var m1 = $('#winframe'+index).contents().find("body")[0].scrollHeight;
+		//$('#winframe'+index).height(m1);
+	} 
+    function setIframe1(index) {
+		//修改iframe的高度
+		//var m1 = $('#winframe'+index).contents().find("body")[0].scrollHeight;
+		//$('#winframe'+index).height(m1);
+	} 
+	function addTab(tabName){
+		if($('#tt').tabs('exists',tabName)){
+			$('#tt').tabs('select',tabName)
+			return;
+		}
+		$('#tt').tabs('add',{
+			title:tabName,
+			fit:true,
+			content:'<iframe style="height:100%;width:100%" align="center" id="winframe'+(++index)+'" onload="setIframe1('+index+')" frameborder="no" border="0"   src="/内容页/'+tabName+'.html"></iframe>' ,
+			closable:true,
+		});
+	}
+	function closeSelectedTab(){
+		tab=$('#tt').tabs("getSelected")
+		$('#tt').tabs("close",tab.panel('options').title)
+	}
+	</script>
+</head>
+<body class="easyui-layout">
+	<div data-options="region:'north',border:false"style="height:60px;overflow: hidden">
+		<div style="float: left"><img style="height:60px;" src="images/Logo.jpg"/></div>
+	</div>
+	<div data-options="region:'west',split:true,title:'菜单'" style="width:200px;padding:10px;">
+		<!-- 
+		<ul id="tt1" class="easyui-tree" data-options="animate:true,dnd:true">
+			<li data-options="state:'closed'">
+				<span>市场管理</span>
+				<ul>
+					<li>*线索管理</li>
+				</ul>
+			</li>
+		</ul>-->
+		<ul id="tt1"></ul>
+	</div>
+	<div data-options="region:'east',split:true,collapsed:true,title:'工具'" style="width:100px;padding:10px;">
+		待处理  添加一下功能性比较强的模块
+	</div>
+	<!-- <div data-options="region:'south',border:false" style="height:50px;background:#A9FACD;padding:10px;">south region</div> -->
+	<div data-options="region:'center'">
+		<div id="tt" class="easyui-tabs" data-options="tools:'#tab-tools',border:false,fit:true" >
+			<div title="首页" data-options="tools:'#p-tools'">
+				<iframe style="height:100%;width:100%" align="center" id="winframe" onload="setIframe()" frameborder="no" border="0"    src="/内容页/首页.html">
+				</iframe>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

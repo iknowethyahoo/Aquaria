@@ -1,0 +1,599 @@
+body {
+	margin: 0px auto;
+	background-color: #F9FAFC;
+}
+
+div.scroller {
+	overflow: auto;
+	border: 1px solid #cceeff;
+	margin: 0px;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+div.toolbars {
+	background: #F5F5F5;
+}
+
+.upload-filename {
+	text-decoration: none;
+	width: 100px;
+	white-space: nowrap;
+	padding: 2px 5px;
+	color:#3399ff;
+	cursor: pointer;
+}
+
+.upload-progress {
+	font-size:11px;
+	width: 50px;
+	white-space: nowrap;
+	padding: 2px 5px;
+}
+
+.upload-remove {
+	text-decoration: none;
+	width: 60px;
+	white-space: nowrap;
+	padding: 2px 5px 2px 20px;
+	background: url("../images/icon/no.gif") no-repeat;
+	
+}
+
+.addcross {
+	padding:5px;
+	background: url(../images/addcross.gif) no-repeat center center;
+}
+.addcross:hover {
+	cursor:pointer;
+	background: #f5f5dd url(../images/addcrosshover.gif) no-repeat center center;
+}
+
+.row-btn {
+	padding: 0 3px;
+	text-decoration: none;
+	color: #3399FF;
+	cursor: pointer;
+}
+
+.row-btn:hover {
+	color: #FF9933;
+}
+
+form {
+	margin: 0px auto;
+}
+
+
+
+span.field {
+	width: 20px;
+	height: 18px;
+	display: block;
+}
+	
+span.input {
+	margin:5px 2px;
+	cursor: pointer;
+	color: #000000;
+	width: 50px;
+}
+
+span.input:hover {
+	color: #0066aa
+}
+
+span.checked {
+	color:#cc0000;
+}
+
+.easyui-layout .window-header {
+	background: #EEEEEE;
+	padding: 2px 0px 4px 0px;
+}
+
+.easyui-layout .window-body {
+	margin: 0 auto;
+	background: #F9FAFC;
+	border-top:0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #99BBE8;
+	overflow: auto;
+}
+
+.window .easyui-layout .window-body {
+	border-left: 1px solid #99BBE8;
+	border-right: 1px solid #99BBE8;
+}
+
+
+.easyui-layout .window-footer {
+	text-align: right;
+	margin: 0 auto;
+	padding-top: 10px;
+	background: #EEEEEE;
+}
+
+.tree-link {
+	padding-left: 40px;
+	color: #000000;
+	font-weight: normal;
+}
+
+.tree-link a {
+	padding-left: 16px;
+	padding-right: 10px;
+	text-decoration: none;
+}
+
+.tree-link a:HOVER {
+	color: #0125ab;
+}
+
+ul.tree {
+	margin: 5px 10px;
+}
+
+.coco-icon {
+	width:16px;
+	height:16px;
+	display:block;
+	cursor: pointer;
+}
+
+table.form {
+	margin:10px auto;
+	padding:0;
+	width: 90%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid rgb(149, 184, 231);
+}
+
+table.form th.head,table.form td.head{
+	width:60px;
+	height:28px;
+	color: #0196d4;
+	font-size:12px;
+	font-weight: bold;
+	white-space: nowrap;
+	vertical-align: middle;
+	text-align:right;
+	background: #e0e0e0;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 1px solid rgb(149, 184, 231);
+	border-left: 1px solid rgb(149, 184, 231);
+	padding: 0 5px;
+	margin: 0;
+}
+
+table.form th.em,table.form td.em {
+	width:10px;
+	text-align:right;
+	color:#ff0000;
+	text-overflow: clip;
+	background: #f5f5f5;
+	font-size:12px;
+	font-weight: normal;
+	white-space:nowrap;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 0;
+	border-left: 1px solid rgb(149, 184, 231);
+	padding:0 2px;
+	margin: 0;
+}
+
+table.form em.em {
+	width:10px;
+	white-space:nowrap;
+	text-align:right;
+	color:#ff0000;
+	font-size:14px;
+	font-weight: normal;
+	border: 0;
+	padding:0 2px;
+	margin: 0;
+}
+
+table.form th.field,table.form td.field {
+	height:28px;
+	color: #000000;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	background: #f5f5f5;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 1px solid rgb(149, 184, 231);
+	border-left: 0;
+	padding:0 5px;
+	margin: 0;
+}
+table.form input.field {
+	width:180px;
+	height:19px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #A4BED4;
+	background-color:transparent;
+}
+/*m*/
+td.field>input{
+	width:180px;
+	height:19px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #A4BED4;
+	background-color:transparent;
+}
+table.form>input{
+	width:180px;
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #A4BED4;
+	background-color:transparent;
+}
+
+
+table.form input.number {
+	width:80px;
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #A4BED4;
+	background-color:transparent;
+	text-align: right;
+	padding-right: 3px;
+}
+
+table.form input.readonly {
+	width:180px;
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #ddcc66;
+	background-color:transparent;
+	background-image:url("../images/main/readonly-bg.gif");
+	color: #cc3300;
+	
+}
+
+table.form select.field {
+	width:180px;
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border: 1px solid #A4BED4;
+}
+
+table.form div.field {
+	width:180px;
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border: 1px solid #A4BED4;
+	padding: 3px;
+}
+
+table.form span.item {
+	font-size:12px;
+	font-weight: normal;
+	margin: 5px 2px;
+	border-bottom: 1px solid #000000;
+}
+
+table.form textarea.field {
+	width:180px;
+	height:60px;
+	font-size:12px;
+	font-weight: normal;
+	border: 1px solid #A4BED4;
+	text-align: left;
+}
+
+.frame{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.query-split {
+	width:10px;
+	height:25px;
+	background: url("../images/main/split.gif") center center no-repeat;
+	padding: 4px;
+}
+
+table.form0 {
+	margin:5px auto;
+	padding:0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid rgb(149, 184, 231);
+}
+
+table.form0 th.head,table.form0 td.head{
+	height:28px;
+	color: #0196d4;
+	font-size:12px;
+	font-weight: bold;
+	white-space: nowrap;
+	vertical-align: middle;
+	text-align:right;
+	background: #e0e0e0;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 1px solid rgb(149, 184, 231);
+	border-left: 1px solid rgb(149, 184, 231);
+	padding: 0 5px;
+	margin: 0;
+}
+
+table.form0 th.em,table.form0 td.em {
+	width:10px;
+	text-align:right;
+	color:#ff0000;
+	text-overflow: clip;
+	background: #f5f5f5;
+	font-size:12px;
+	font-weight: normal;
+	white-space:nowrap;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 0;
+	border-left: 1px solid rgb(149, 184, 231);
+	padding:0 2px;
+	margin: 0;
+}
+
+table.form0 em.em {
+	width:10px;
+	white-space:nowrap;
+	text-align:right;
+	color:#ff0000;
+	font-size:14px;
+	font-weight: normal;
+	border: 0;
+	padding:0 2px;
+	margin: 0;
+}
+
+table.form0 th.field,table.form0 td.field {
+	height:28px;
+	color: #000000;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	background: #f5f5f5;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 1px solid rgb(149, 184, 231);
+	border-left: 0;
+	padding:0 5px;
+	margin: 0;
+}
+
+table.form0 input.field {
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #A4BED4;
+	background-color:transparent;
+}
+
+table.form0 input.number {
+	width:80px;
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #A4BED4;
+	background-color:transparent;
+	text-align: right;
+	padding-right: 3px;
+}
+
+table.form0 input.readonly {
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #ddcc66;
+	background-color:transparent;
+	background-image:url("../images/main/readonly-bg.gif");
+	color: #cc3300;
+}
+
+table.form0 select.field {
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border: 1px solid #A4BED4;
+}
+
+table.form0 div.field {
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border: 1px solid #A4BED4;
+	padding: 3px;
+}
+
+table.form0 span.item {
+	font-size:12px;
+	font-weight: normal;
+	margin: 5px 2px;
+	border-bottom: 1px solid #000000;
+}
+
+table.form0 textarea.field {
+	height:60px;
+	font-size:12px;
+	font-weight: normal;
+	border: 1px solid #A4BED4;
+}
+
+table.datagrid {
+	margin:5px auto;
+	padding:0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid rgb(149, 184, 231);
+}
+
+table.datagrid th.datagrid-head,table.datagrid td.datagrid-head{
+	height:28px;
+	color: #0196d4;
+	font-size:12px;
+	font-weight: bold;
+	white-space: nowrap;
+	vertical-align: middle;
+	text-align:center;
+	background: #e0e0e0;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 1px solid rgb(149, 184, 231);
+	border-left: 1px solid rgb(149, 184, 231);
+	padding: 0 5px;
+	margin: 0;
+}
+
+table.datagrid th.datagrid-body,table.datagrid td.datagrid-body {
+	height:25px;
+	width:10px;
+	text-align:left;
+	color:#000000;
+	text-overflow: clip;
+	background: #f5f5f5;
+	font-size:12px;
+	font-weight: normal;
+	white-space:nowrap;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 0;
+	border-left: 1px solid rgb(149, 184, 231);
+	padding:0 2px;
+	margin: 0;
+}
+
+table.datagrid th.datagrid-body-first,table.datagrid td.datagrid-body-first {
+	height:25px;
+	width:10px;
+	text-align:left;
+	color:#000000;
+	text-overflow: clip;
+	background: #f5f5f5;
+	font-size:12px;
+	font-weight: normal;
+	white-space:nowrap;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 0;
+	border-left: 1px solid rgb(149, 184, 231);
+	padding:0 2px;
+	margin: 0;
+}
+
+table.datagrid th.datagrid-foot,table.datagrid td.datagrid-foot {
+	height:25px;
+	width:10px;
+	text-align:left;
+	color:#000000;
+	text-overflow: clip;
+	background: #f5f5f5;
+	font-size:12px;
+	font-weight: normal;
+	white-space:nowrap;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 0;
+	border-left: 1px solid rgb(149, 184, 231);
+	padding:0 2px;
+	margin: 0;
+}
+
+table.datagrid input.field {
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #A4BED4;
+	background-color:transparent;
+}
+
+table.datagrid input.number {
+	width:80px;
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #A4BED4;
+	background-color:transparent;
+	text-align: right;
+	padding-right: 3px;
+}
+
+table.desktop {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid #cccccc;
+	width: 100%;
+	margin: 0 auto;
+}
+
+table.desktop th {
+	overflow:hidden;
+	border:1px solid #ccc;
+	cursor:default;
+	padding: 3px 5px;
+	background: #eeeeee;
+	white-space: nowrap;
+}
+table.desktop td {
+	overflow:hidden;
+	border:1px solid #ccc;
+	cursor:default;
+	padding: 3px 5px;
+}

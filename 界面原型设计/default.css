@@ -1,0 +1,161 @@
+body {
+	margin: 0px auto;
+	background-color: #F9FAFC;
+}
+
+table.form {
+	margin:10px auto;
+	padding:0;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid rgb(149, 184, 231);
+}
+
+table.form th.head,table.form td.head{
+	width:60px;
+	height:28px;
+	color: #0196d4;
+	font-size:12px;
+	font-weight: bold;
+	white-space: nowrap;
+	vertical-align: middle;
+	text-align:right;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 1px solid rgb(149, 184, 231);
+	border-left: 1px solid rgb(149, 184, 231);
+	padding: 0 5px;
+	margin: 0;
+}
+
+table.form th.em,table.form td.em {
+	width:10px;
+	text-align:right;
+	color:#ff0000;
+	text-overflow: clip;
+	font-size:12px;
+	font-weight: normal;
+	white-space:nowrap;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 0;
+	border-left: 1px solid rgb(149, 184, 231);
+	padding:0 2px;
+	margin: 0;
+}
+
+table.form em.em {
+	width:10px;
+	white-space:nowrap;
+	text-align:right;
+	color:#ff0000;
+	font-size:14px;
+	font-weight: normal;
+	border: 0;
+	padding:0 2px;
+	margin: 0;
+}
+
+table.form th.field,table.form td.field {
+	height:28px;
+	color: #000000;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	border-collapse:collapse;
+	border-top: 1px solid rgb(149, 184, 231);
+	border-bottom: 1px solid rgb(149, 184, 231);
+	border-right: 1px solid rgb(149, 184, 231);
+	border-left: 0;
+	padding:0 5px;
+	margin: 0;
+}
+table.form input.field {
+	width:180px;
+	height:19px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #A4BED4;
+	background-color:transparent;
+}
+
+/*m*/
+td.field>input{
+	width:95%;
+	height:19px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #A4BED4;
+	background-color:transparent;
+}
+table.form input.number {
+	width:80px;
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #A4BED4;
+	background-color:transparent;
+	text-align: right;
+	padding-right: 3px;
+}
+
+table.form input.readonly {
+	width:180px;
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #ddcc66;
+	background-color:transparent;
+	background-image:url("../images/main/readonly-bg.gif");
+	color: #cc3300;
+	
+}
+
+table.form select.field {
+	width:180px;
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border: 1px solid #A4BED4;
+}
+
+table.form div.field {
+	width:180px;
+	height:17px;
+	font-size:12px;
+	font-weight: normal;
+	border: 1px solid #A4BED4;
+	padding: 3px;
+}
+
+table.form span.item {
+	font-size:12px;
+	font-weight: normal;
+	margin: 5px 2px;
+	border-bottom: 1px solid #000000;
+}
+
+table.form textarea.field {
+	width:180px;
+	height:60px;
+	font-size:12px;
+	font-weight: normal;
+	border: 1px solid #A4BED4;
+	text-align: left;
+}
+

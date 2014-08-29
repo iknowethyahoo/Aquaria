@@ -1,0 +1,202 @@
+
+<!DOCTYPE html >
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!-- -->
+    <link rel="stylesheet" href="../default.css" type="text/css"  />
+	<!-- easyui -->
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/metro/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/demo.css">
+	<script type="text/javascript" src="../easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+
+    <!--[if lt IE 9]><script src="../excanvas/excanvas.js"></script><![endif]-->
+    <title>线索列表</title>
+</head>
+<body>
+	<div id="dd" class="easyui-dialog" title="对手明细" style="width:550px;height:300px;" 
+        data-options="iconCls:'icon-add',resizable:true,modal:true">
+	    <table class="form" >
+			<colgroup>
+				<col /><col /><col /><col /><col /><col />
+			</colgroup>
+			<tr>
+				<td class="field"colspan="6"><font style="color: #FF3300">竞争对手明细</font></th>
+			</tr>
+			<tr>
+				<th class="head" >名称</th>
+				<th class="em"></th>
+				<td class="field" colspan="4"><input value="1"id='dmc' style="width:90%"/></td>
+			</tr>
+			<tr>
+				<th class="head" >行业</th>
+				<th class="em"></th>
+				<td class="field"><input id="dhy" value=""/></td>
+				<th class="head" >规模</th>
+				<th class="em"></th>
+				<td class="field"><input id="dgm" value=""/></td>
+			</tr>
+		</table>
+	</div>
+	<div  id="dd1" class="easyui-dialog" title="机会分派" style="width:300px;height:130px;"
+        data-options="resizable:true,modal:true">
+	    <table class="form" >
+			<colgroup>
+				<col /><col /><col />
+			</colgroup>
+			<tr>
+				<th class="head">转给</th>
+				<th class="em"></th>
+				<td class="field"><select class="field" size="1" name="" style="width:100px;height:20">
+						<option></option>
+						<option>小王</option>
+						<option>李华</option>
+						<option>赵顺</option>
+					</select></td>
+			</tr>
+		</table>
+	</div>
+	<div region="center" border="false"  >
+		<table class="form" >
+			<colgroup>
+				<col /><col /><col /><col /><col /><col /><col /><col /><col /> 
+			</colgroup>
+			<tr>
+				<td class="field"colspan="9"><font style="color: #FF3300">基本信息</font></th>
+			</tr>
+			<script>
+				$(function(){
+					//$('.khbq>th,.khbq>td').css({ background: "#FFFF33"});
+				})
+			</script>
+			<tr >
+				<th class="head">主题</th>
+				<th class="em"></th>
+				<td class="field">
+					<input />
+				</td>
+				<th class="head">来源</th>
+				<th class="em"></th>
+				<td class="field" >
+					<input />
+				</td>
+				<th class="head">客户名称</th>
+				<th class="em"></th>
+				<td class="field">
+					<input />
+				</td>
+			</tr>
+			<tr>
+				<td class="field" colspan="9">
+					<div align="right">
+						<div>
+							<span >
+								<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
+							</span>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<script>
+				$(function(){
+					//
+					$('#dd').dialog({
+						buttons:[{
+							text:'保存',
+							iconCls:'icon-save',
+							handler:function(){
+							}
+						},{
+							text:'取消',
+							iconCls:'icon-cancel',
+							handler:function(){
+								$('#dd').dialog('close');
+							}
+						}]
+					});
+					$('#dd').dialog('close')
+					
+					//机会分派
+					$('#dd1').dialog({
+						buttons:[{
+							text:'保存',
+							iconCls:'icon-save',
+							handler:function(){
+							}
+						},{
+							text:'取消',
+							iconCls:'icon-cancel',
+							handler:function(){
+								$('#dd1').dialog('close');
+							}
+						}]
+					});
+					$('#dd1').dialog('close')
+					
+					$('#jhlb').datagrid({
+						url:'/内容页/数据仓库/机会列表.json',
+						columns:[[
+							{field:'-mc',title:'主题', width:120,formatter:function(value,row,index){
+								return row.mc+'线索'							}},
+							{field:'ly',title:'线索来源', width:50},
+							{field:'khm',title:'客户', width:50},
+							{field:'knx',title:'可能性', width:50},
+							{field:'je',title:'金额', width:60},
+							{field:'yqsr',title:'预期收入', width:80},
+							{field:'--',title:'竞争对手', width:80,formatter:function(value,row,index){
+								ds=row.jzds;
+								result='';
+								for(var i=0;i<ds.length;i++){
+									result+='<a class="row-btn" onclick="viewJzds(\''+ds[i]+'\')">'+ds[i]+'</a>'
+									if(i!=ds.length-1){
+										result+='|';
+									}
+								}
+								return result;
+							}},
+							{field:'-',title:'操作', width:50,align:'center',formatter: function(value,row,index){
+									return '<a class="row-btn" "  >转为机会</a>';
+								}
+							}
+						]],
+						toolbar:[{
+							id:'btnadd',
+							text:'新增线索',
+							iconCls:'icon-add',
+							handler:function(){
+								
+								//window.parent.addTab('销售机会新增')
+							}
+						}],
+						onSelect:function(rowIndex, rowData){
+						},
+						onLoadSuccess:function(){
+						}
+					});
+					$('#btnadd').linkbutton('disable')
+				})
+				function viewDetail(){
+					window.parent.addTab('销售机会')
+				}
+				function viewJzds(mc){
+					$('#dmc').attr('value',mc)
+					$('#dhy').attr('value','系统集成')
+					$('#dgm').attr('value','200人以上')
+					$('#dd').dialog('open')
+				}
+			</script>
+			<tr>
+				<td class="field" colspan="9" style="padding:20px">
+					<table id="jhlb" class="easyui-datagrid" data-options="fitColumns:true,nowrap:false,rownumbers:true,showFooter:true,singleSelect:true">
+					</table>
+				</td>
+			</tr>
+		</table>
+		<div align="center">
+		</div>
+	</div>
+</body>
+</html>
