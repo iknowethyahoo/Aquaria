@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<bean class="com.pricl.test.core.util.Helper">
+		<property  name="fileEncoding" value="UTF-8" ></property>
+		<property  name="locations"  >
+			<list>
+				<value>classpath:config.properties</value>
+				<!-- 
+				<value>classpath:template.properties</value> -->
+			</list>
+		</property>
+	</bean>	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+	    <property name="driverClassName" value="${db.driver}" /> 
+	    <property name="url" value="${db.url}" /> 
+	    <property name="username" value="${db.user}" /> 
+	    <property name="password" value="${db.password}" />
+	</bean>
+	
+	<bean id="entityManagerFactory"  class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	
+</beans>
